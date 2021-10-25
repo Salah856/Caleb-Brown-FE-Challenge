@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from "react";
-import axios from 'axios'; 
 import MUIDataTable from "mui-datatables";
 
 import Loading from '../components/loading'; 
 import filterTrending from "../utils/filterTrending";
-
+import trendingCoins from "../APIs/trendingCoins";
 
 function TrendingCoins(){
 
@@ -15,14 +14,10 @@ function TrendingCoins(){
     useEffect( () => { 
         async function fetchTrendingCoins() {
             try {
-              const res = await axios.get(
-                'https://api.coingecko.com/api/v3/search/trending'
-              ); 
-              
+              const res = await trendingCoins(); 
               setLoading(false);
               setTrendingCoins(filterTrending(res.data.coins));
-            
-            } catch (err) {
+            } catch (err) {  
               setLoading(false); 
               setErr(true); 
             }
