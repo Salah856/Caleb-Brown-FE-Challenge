@@ -1,28 +1,9 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios'; 
-import { useHistory } from "react-router";
 import MUIDataTable from "mui-datatables";
+
 import Loading from '../components/loading'; 
-
-
-const filterTrending = (coins)=>{
-    let trending = []; 
-    coins.forEach(({item})=>{
-
-        const {name, market_cap_rank, symbol, price_btc, score} = item; 
-
-        let row = {
-            name: name, 
-            market_cap_rank: market_cap_rank, 
-            symbol: symbol, 
-            price_btc: price_btc, 
-            score: score
-        }; 
-
-        trending.push(row); 
-    }); 
-    return trending; 
-}; 
+import filterTrending from "../utils/filterTrending";
 
 
 function TrendingCoins(){
@@ -31,7 +12,6 @@ function TrendingCoins(){
   const [loading, setLoading] = useState(true); 
   const [err, setErr] = useState(false); 
 
-  const history = useHistory();
     
     useEffect( () => { 
         async function fetchTrendingCoins() {
