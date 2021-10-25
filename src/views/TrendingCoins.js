@@ -11,7 +11,6 @@ function TrendingCoins(){
   const [trendingCoins, setTrendingCoins] = useState([]);
   const [loading, setLoading] = useState(true); 
   const [err, setErr] = useState(false); 
-
     
     useEffect( () => { 
         async function fetchTrendingCoins() {
