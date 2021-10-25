@@ -1,5 +1,5 @@
 
-const bc = new BroadcastChannel('conduktor-channel'); 
+const bc = new BroadcastChannel('calebAndBrown-channel'); 
 
 export default bc; 
 
