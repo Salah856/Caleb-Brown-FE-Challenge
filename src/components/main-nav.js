@@ -19,6 +19,14 @@ const MainNav = () => (
     >
       Profile
     </NavLink>
+    <NavLink
+      to="/trending-coins"
+      exact
+      className="nav-link"
+      activeClassName="router-link-exact-active"
+    >
+      Trending Coins
+    </NavLink>
   </div>
 );
 

@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import { NavBar, Footer, Loading } from "./components";
-import { Home, Profile, CreateCoin } from "./views";
+import { Home, Profile, CreateCoin, TrendingCoins } from "./views";
 import ProtectedRoute from "./auth/protected-route";
 import bc from '../src/utils/broadCastChannel'; 
 
@@ -40,6 +40,7 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <ProtectedRoute path="/profile" component={Profile} />
           <ProtectedRoute path="/topics-create" component={CreateCoin}/>
+          <ProtectedRoute path="/trending-coins" component={TrendingCoins}/>
         </Switch>
       </div>
       <Footer />
