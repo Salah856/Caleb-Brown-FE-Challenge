@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
-import axios from 'axios'; 
 import { useHistory } from "react-router";
 import MUIDataTable from "mui-datatables";
 import Loading from '../components/loading'; 
+import listCoins from "../APIs/listCoins";
+
 
 function ListCoins(){
 
@@ -15,10 +16,8 @@ function ListCoins(){
     useEffect( () => { 
         async function fetchCoins() {
             try {
-              const res = await axios.get(
-                'https://api.coingecko.com/api/v3/coins/list'
-              ); 
               
+              const res = await listCoins(); 
               setLoading(false);
               setCoins(res.data);
             
