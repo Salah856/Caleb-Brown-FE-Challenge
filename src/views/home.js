@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import { useHistory } from "react-router";
 import MUIDataTable from "mui-datatables";
 import Loading from '../components/loading'; 
 import listCoins from "../APIs/listCoins";
@@ -10,8 +9,6 @@ function ListCoins(){
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(true); 
   const [err, setErr] = useState(false); 
-
-  const history = useHistory();
     
     useEffect( () => { 
         async function fetchCoins() {
